@@ -1,0 +1,64 @@
+{
+  "name": "vietnamese-commenter",
+  "displayName": "vietnamese-commenter",
+  "description": "Tự động gợi ý comment",
+  "version": "1.1.1",
+  "publisher": "comment",
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:vietnamese-commenter.commentCode"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "vietnamese-commenter.commentCode",
+        "title": "Gợi ý comment tiếng Việt"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "vietnamese-commenter.commentCode",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^3.3.2"
+  }
+}
