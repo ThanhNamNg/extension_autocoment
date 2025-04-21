@@ -28,26 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     const prompt = `
-Bạn là chuyên gia lập trình. Hãy viết một đoạn chú thích ngắn gọn bằng tiếng Việt (1-3 dòng) mô tả chức năng hoặc mục đích của đoạn mã sau. 
-Chỉ trả về phần chú thích (dưới dạng tiếng Việt thuần), không lặp lại đoạn mã nguồn.
 
-### Ví dụ:
-
-Input:
-function sum(a, b) {
-  return a + b;
-}
-Output:
-Hàm tính tổng hai số và trả về kết quả.
-
-Input:
-for (let i = 0; i < 10; i++) {
-  console.log(i);
-}
-Output:
-Vòng lặp in ra các số từ 0 đến 9.
-
-### Đoạn mã:
 ${selectedCode}
 `;
 
